@@ -1,67 +1,50 @@
-set nocompatible 	" be iMproved
-filetype off 		" For vundle
+" Configuration
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+set nu
+set autoread
+set number
+
+" Mappings
+
+map <Esc><Esc> :q <CR>
+map <F2> :NERDTreeToggle <CR>
+map <F3> :!clear && grep -nr 
+map <F4> :!rspec --color <CR>
+map <F5> :w <CR>
+map <F6> :Gstatus <CR>
+map <F8> Ibinding.pry<CR><Esc>
+map <Space> /
+map ñ :
+map <Tab> $
+map <C-k> 5k
+map <C-j> 5j
+
+" set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
+
+" Plugins
 call vundle#begin()
-
-" Good looking bottom :)
-Plugin 'bling/vim-airline'
-
 Plugin 'gmarik/Vundle.vim'
-
-" Ctrl+P plugin (snap open)
 Plugin 'kien/ctrlp.vim'
-
-" " Solarized
-Plugin 'altercation/vim-colors-solarized'
-
-" " Fugitive
 Plugin 'tpope/vim-fugitive'
-
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'slim-template/vim-slim'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'vim-ruby/vim-ruby'
-
-"theme
-Plugin 'tomasr/molokai'
-
-"The NERD tree allows you to explore your filesystem and to open files and
-"directories. It presents the filesystem to you in the form of a tree which
-"you manipulate with the keyboard and/or mouse. It also allows you to perform
-"simple filesystem operations.
 Plugin 'scrooloose/nerdtree'
-
-"This is a simple plugin that helps to end certain structures automatically.
 Plugin 'tpope/vim-endwise'
-
-"Supertab is a vim plugin which allows you to use <Tab> for all your insert
-"completion needs (:help ins-completion).
 Plugin 'ervandew/supertab'
-
-"nsert or delete brackets, parens, quotes in pair.
-Plugin 'vim-scripts/Auto-Pairs'
-
-"An extensible & universal comment vim-plugin that also handles embedded
-"filetypes
-Plugin 'tomtom/tcomment_vim'
-
-"Defaults everyone can agree on
-Plugin 'tpope/vim-sensible'
-
-"The ultimate snippet solution for Vim.
 Plugin 'SirVer/ultisnips'
-
-"Easy text exchange operator for Vim.
-Plugin 'tommcdo/vim-exchange'
-
-"Vim script for text filtering and alignment
-Plugin 'godlygeek/tabular'
-
-"lean & mean status/tabline for vim that's light as air
-Plugin 'airblade/vim-gitgutter'
-
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'oplatek/Conque-Shell'
 call vundle#end()            " required
 
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+" Snippets config
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
@@ -70,65 +53,20 @@ let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
-augroup myfiletypes
-" Clear old autocmds in group
-autocmd!
-" autoindent with two spaces, always expand tabs
-autocmd FileType ruby,eruby,yaml,markdown set ai sw=2 sts=2 et
-augroup END
-" ================
-" Syntax highlighting and theme
-syntax enable
-" Configs to make Molokai look great
+
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+" Style
+color solarized
 set background=dark
-let g:molokai_original=1
-let g:rehash256=1
-set t_Co=256
-colorscheme molokai
-" Show trailing whitespace and spaces before a tab:
-:highlight ExtraWhitespace ctermbg=red guibg=red
-:autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\\t/
-" Lovely linenumbers
-set nu
-
-let g:airline_theme='luna'
-let g:airline_powerline_fonts=1
-set laststatus=2
-
-" Mappings
-map <Esc><Esc> :q <CR>
-map <F2> :NERDTree <CR>
-"map <F3> :!clear && grep -nr
-"map <F4> :!rspec --color <CR>
-map <F5> :w <CR>
-map <F6> :Gstatus <CR>
-map <F8> Ibinding.pry<CR><Esc>
-let mapleader=','
-map <Space> /
-map ñ :
-" Select all text
-nmap <C-a> ggVG
-
-" Add brackets, parens and quotes arround a word
-vmap ( I(<Esc>lxgvlA)<Esc>
-vmap [ I[<Esc>lxgvlA]<Esc>
-vmap { I{<Esc>lxgvlA}<Esc>
-vmap " I"<Esc>lxgvlA"<Esc>
-
-" Mapping for plugin to tabularize
-vmap <Leader>a= :Tabularize /=<CR>
-nmap <Leader>a= :Tabularize /=<CR>
-nmap <Leader>a: :Tabularize /:\zs<CR>
-vmap <Leader>a: :Tabularize /:\zs<CR>
-
-" Move between windows
-nmap <C-H> <C-W>h
-nmap <C-J> <C-W>j
-nmap <C-K> <C-W>k
-nmap <C-L> <C-W>l
-
-" Move a line or selected lines one position up or down
-nnoremap <C-Down> :m .+1<CR>==
-nnoremap <C-Up> :m .-2<CR>==
-vnoremap <C-Down> :m '>+1<CR>gv=gv
-vnoremap <C-Up> :m '<-2<CR>gv=gv
