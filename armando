@@ -1,0 +1,35 @@
+Armando Andini
+
+Role: Ruby developer.
+
+Github profile: http://github.com/antico5
+
+Summary
+
+I'm a developer who has been working with ruby for the last 2 years, but
+started learning and developing as an amateur about 9 years ago. I enjoy
+learning and using new technologies when I have the chance.
+
+I'm focused on web development using ruby web frameworks. On the latest
+projects I've been using rails for full-stack applications and grape for API backends.
+I'm familiar with RESTful web services. Many of the projects I've worked on
+require consuming third party services through a APIs.
+
+As for development cycles, I'm familiar with agile methodologies. I've worked on projects with short iterations,
+and daily communication with the team, project managers and customers.
+
+Among the tools and practices I use everyday I can enumerate:
+ - Git version control system. As a team, we contribute our code based on a
+   pull request / review / merge flow, to ensure code quality.
+ - Test driven development. I use RSpec as my testing framework for writing
+   all types of tests for my applications.
+ - Refactoring. When some part of the application starts growing I rely on tests
+   to have the freedom to change the code and classes/modules responsabilities.
+ - Pair programming.
+ - Code quality tools and services. Rubocop, CodeClimate.
+
+I've contributed to the following open source projects:
+ - Active Force (https://github.com/ionia-corporation/active_force)
+ - Ruby MQTT (https://github.com/njh/ruby-mqtt)
+ - Mosca (https://github.com/antico5/mosca)
+ - Xively client libraries (https://github.com/ionia-corporation/xively_api_client)
