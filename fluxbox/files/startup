@@ -23,7 +23,6 @@ fi
 
 /home/armandito/programas/bash/auto_randr.sh &
 nm-applet &
-workrave &
 exec fluxbox
 
 fbsetbg $HOME/.fluxbox/wallpaper.jpg
