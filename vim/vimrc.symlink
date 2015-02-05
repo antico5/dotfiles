@@ -14,7 +14,7 @@ set number
 map <Esc><Esc> :q <CR>
 map <F2> :NERDTreeToggle <CR>
 map <F3> :!clear && grep -nr 
-map <F4> :!rspec --color <CR>
+map <F4> :!bundle exec rspec --color <CR>
 map <F5> :w <CR>
 map <F6> :Gstatus <CR>
 map <F8> Ibinding.pry<CR><Esc>
