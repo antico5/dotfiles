@@ -23,6 +23,9 @@ map ñ :
 map <Tab> $
 map <C-k> 5k
 map <C-j> 5j
+map <C-+> :vs<CR>
+map <C--> :sp<CR>
+map <C-t> :ConqueTerm zsh<CR>
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim

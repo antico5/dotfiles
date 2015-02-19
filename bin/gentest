@@ -1,0 +1,10 @@
+mkdir test
+echo "\$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)" > test/test_helper.rb
+echo "require 'cutest'" >> test/test_helper.rb
+
+echo "\
+task :test do
+  exec 'cutest -r ./test/test_helper.rb test/*.rb'
+end
+
+task :default => :test" >> Rakefile
