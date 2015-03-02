@@ -23,8 +23,8 @@ map ñ :
 map <Tab> $
 map <C-k> 5k
 map <C-j> 5j
-map <C-+> :vs<CR>
-map <C--> :sp<CR>
+map ' :vs<CR>
+map ¿ :sp<CR>
 map <C-t> :ConqueTerm zsh<CR>
 
 " set the runtime path to include Vundle and initialize
@@ -37,7 +37,6 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'slim-template/vim-slim'
-Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-endwise'
