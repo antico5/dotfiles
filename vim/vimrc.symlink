@@ -12,7 +12,7 @@ set number
 " Mappings
 
 map <Esc><Esc> :q <CR>
-map <F2> :NERDTreeToggle <CR>
+map <F2> :Ex <CR>
 map <F3> :!clear && grep -nr 
 map <F4> :!bundle exec rspec --color <CR>
 map <F5> :w <CR>
@@ -44,6 +44,9 @@ Plugin 'ervandew/supertab'
 Plugin 'SirVer/ultisnips'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'oplatek/Conque-Shell'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
 call vundle#end()            " required
 
 " Snippets config
